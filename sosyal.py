@@ -27,7 +27,7 @@ from collections import OrderedDict
 
 
 
-wb = xlrd.open_workbook('Report.xls')
+wb = xlrd.open_workbook('kayitli_olacakr_rapor.xls')
 #print (wb.sheet_names())
 def kisiler():
 
@@ -38,10 +38,10 @@ def kisiler():
     for rownum in range(0,sh.nrows):
         kisiler = OrderedDict()
         row_values = sh.row_values(rownum)
-        kisiler['ad'] = row_values[0]
-        kisiler['soyadi'] = row_values[1]
-        kisiler['email'] = row_values[2]
-        kisiler['Department'] = row_values[3]
+        kisiler['hebele'] = row_values[0]
+        kisiler['hubele'] = row_values[1]
+        kisiler['uga'] = row_values[2]
+        kisiler['buga'] = row_values[3]
         liste.append(kisiler)
 
     j = json.dumps(liste)
@@ -63,10 +63,10 @@ def tiklayanlar():
     for rownum in range(0,sh.nrows):
         kisiler = OrderedDict()
         row_values = sh.row_values(rownum)
-        kisiler['ad'] = row_values[0]
-        kisiler['soyadi'] = row_values[1]
-        kisiler['email'] = row_values[2]
-        kisiler['E-Posta, Sifre Ve GSM Bilgileri'] = row_values[11]
+        kisiler['hebele'] = row_values[0]
+        kisiler['hubele'] = row_values[1]
+        kisiler['uga'] = row_values[2]
+        kisiler['bugad'] = row_values[11]
         liste.append(kisiler)
 
     j = json.dumps(liste)
